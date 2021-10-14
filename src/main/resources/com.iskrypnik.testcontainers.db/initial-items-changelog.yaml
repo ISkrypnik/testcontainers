@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: iskrypnik
+      changes:
+        - createTable:
+            tableName: items
+            remarks: Table of Item entities
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  remarks: Генерируемый идентификатор
+                  valueSequenceNext: item_sequence
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar
+                  remarks: Описание сущности Item
+  - changeSet:
+      id: 2
+      author: iskrypnik
+      changes:
+        - loadData:
+            tableName: items
+            columns:
+              - column:
+                  name: description
+                  type: STRING
+            encoding: UTF-8
+            file: com.iskrypnik.testcontainers.db/initial-items.csv
+            separator: ;

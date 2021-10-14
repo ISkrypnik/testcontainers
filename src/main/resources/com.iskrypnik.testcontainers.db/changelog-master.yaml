@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: com.iskrypnik.testcontainers.db/initial-changelog.yaml
+  - include:
+      file: com.iskrypnik.testcontainers.db/initial-items-changelog.yaml
