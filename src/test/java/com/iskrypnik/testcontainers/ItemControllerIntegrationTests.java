@@ -2,6 +2,7 @@ package com.iskrypnik.testcontainers;
 
 import com.iskrypnik.testcontainers.model.Item;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -19,6 +20,7 @@ class ItemControllerIntegrationTests extends BaseIT {
     @Autowired
     private MockMvc mockMvc;
 
+    @DisplayName("Проверка на возвращаемый объект: по id = 1 возвращется объект с id = 1.")
     @Test
     void getItemById() throws Exception {
         MvcResult result = this.mockMvc.perform(get("/item/1"))
