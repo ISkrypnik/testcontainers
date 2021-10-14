@@ -17,7 +17,7 @@ public class ItemController {
 
     private final ItemService itemService;
 
-    @GetMapping("/item/{id}")
+    @GetMapping("{id}")
     public Item getItem(@PathVariable Long id) {
         log.info("Incoming GET request for \"/item/{}\"", id);
         return itemService.getItemById(id);
