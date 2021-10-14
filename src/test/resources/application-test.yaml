@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        default-schema: public
+  test:
+    database:
+      replace: none
+  liquibase:
+    change-log: classpath:com.iskrypnik.testcontainers.db/changelog-master.yaml
+    contexts: test
+
+logging:
+  level:
+    liquibase: INFO
