@@ -20,7 +20,7 @@ class ItemControllerIntegrationTests extends BaseIT {
     @Autowired
     private MockMvc mockMvc;
 
-    @DisplayName("Проверка на возвращаемый объект: по id = 1 возвращется объект с id = 1.")
+    @DisplayName("Проверка на возвращаемый объект: по id = 1 возвращается объект с id = 1.")
     @Test
     void getItemById() throws Exception {
         MvcResult result = this.mockMvc.perform(get("/item/1"))
